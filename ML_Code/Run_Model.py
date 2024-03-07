@@ -1,5 +1,5 @@
 import joblib
-from MentalHealth_ML import DataLoader, DataCleaner, DataSplitter, FeatureEngineer, Modelling
+from ML_Code.MentalHealth_ML import DataLoader,DataCleaner,DataSplitter,FeatureEngineer,Modelling
 
 from sklearn.preprocessing import MultiLabelBinarizer
 
@@ -31,7 +31,7 @@ def main(patient_file: str):
     # Label Binarization
     mlb = MultiLabelBinarizer()
     encoded_labels = mlb.fit_transform(labels)
-    joblib.dump(mlb, 'label_binarizer.pkl')  # Save the fitted MultiLabelBinarizer
+    joblib.dump(mlb, '../Label_Binarizer/label_binarizer.pkl')  # Save the fitted MultiLabelBinarizer
 
     # Data Splitting
     data_splitter = DataSplitter(combined_features, encoded_labels)
@@ -53,9 +53,9 @@ def main(patient_file: str):
     model_selector.evaluate_model('random_forest')
 
     # Save the Random Forest model
-    joblib.dump(model_selector.models['random_forest'], 'random_forest_model.pkl')
+    joblib.dump(model_selector.models['random_forest'], '../Model_Instance/random_forest_model.pkl')
 
 
 if __name__ == "__main__":
-    patient_file = 'Patient_Data.xlsx'
+    patient_file = '../ML_Datasets/Patient_Data.xlsx'
     main(patient_file)

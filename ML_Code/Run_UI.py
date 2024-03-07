@@ -3,7 +3,7 @@ import subprocess
 import numpy as np
 import streamlit as st
 import joblib
-from MentalHealth_ML import FeatureEngineer
+from ML_Code.MentalHealth_ML import FeatureEngineer
 
 @st.cache_data
 def get_feature_engineer():
@@ -12,12 +12,12 @@ def get_feature_engineer():
 
 @st.cache_data
 def load_model():
-    return joblib.load('random_forest_model.pkl')
+    return joblib.load('../Model_Instance/random_forest_model.pkl')
 
 
 @st.cache_data
 def load_label_binarizer():
-    return joblib.load('label_binarizer.pkl')
+    return joblib.load('../Label_Binarizer/label_binarizer.pkl')
 
 
 model = load_model()

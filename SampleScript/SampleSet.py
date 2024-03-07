@@ -27,8 +27,8 @@ def create_sample_dataset(original_file_path, sample_file_path, sample_fraction=
 
 
 if __name__ == "__main__":
-    original_file_path = 'Patient_Data.xlsx'
-    sample_file_path = 'Patient_Tests_Sample.xlsx'
+    original_file_path = '../ML_Datasets/Patient_Data.xlsx'
+    sample_file_path = '../ML_Datasets/Patient_Tests_Sample.xlsx'
 
     # Create the sampled dataset
     create_sample_dataset(original_file_path, sample_file_path)

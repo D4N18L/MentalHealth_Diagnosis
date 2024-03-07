@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 import pandas as pd
-from MentalHealth_ML import DataLoader, DataCleaner, DataSplitter
+from MentalHealth_ML.MentalHealth_ML import DataLoader, DataCleaner, DataSplitter
 
 
 class TestDataLoader(unittest.TestCase):
